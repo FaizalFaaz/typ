@@ -1,0 +1,268 @@
+<script src="../javascripts/app.js"></script>
+//types
+//numbers
+let mynumber:number=4;
+//strings
+let mystring:string="hi";
+//arrays
+let count = [1,2,3,4];
+let count :number[] = [1,2,3,4];
+let count<number> = [1,2,3,4];
+
+//tuples
+let anything =4;
+
+anything = "sometext" error
+anything=false;
+
+we need to give "any"
+
+loops
+
+var  num:number = 5
+if (num > 0) { 
+   console.log("number is positive") 
+}
+//
+for loop
+
+
+var num:number = 5; 
+var i:number; 
+var factorial = 1; 
+
+for(i = num;i>=1;i--) {
+   factorial *= i;
+}
+console.log(factorial)
+///
+
+for--- in
+
+var j:any; 
+var n:any = "a b c" 
+
+for(j in n) {
+   console.log(n[j])  ;
+}
+
+defining functions
+
+function  function_name() { 
+   // function body 
+}
+
+invoking function
+
+function test() {   // function definition    
+   console.log("function called") 
+} 
+test() 
+
+
+return type
+
+
+function greet():string { //the function returns a string 
+   return "Hello World" 
+} 
+
+
+parametrized function
+function test_param(name,age) { 
+   console.log(n1) 
+   console.log(s1) 
+} 
+
+function test_param(n1:number,s1:string) { 
+   return name + age;
+} 
+test_param(123,"this is a string")
+
+//explain optional parameters in functions and default calls
+
+/////interfaces
+
+function drawrectangle(options){
+let width = options.width;
+let length = options.length;
+}
+drawrectangle({width:10;length:50});
+
+interface recoption{
+widht:number;
+length:number;
+height?:number;
+}
+
+//implement the object specifications with interface
+
+interface Person { 
+   firstName:string, 
+   lastName:string, 
+   sayHi: ()=>string 
+} 
+
+var customer:IPerson = { 
+   firstName:"Tom",
+   lastName:"Hanks", 
+   sayname: ():string =>{return this.firstName;} 
+} 
+
+now if we wan we can declare other class var employee:person{}
+
+///class implementations
+
+fields
+constructors
+functions
+
+class Car { 
+   //field 
+   engine:string; 
+ 
+   //constructor 
+   constructor(engine:string) { 
+      this.engine = engine 
+   }  
+
+   //function 
+   disp():void { 
+      console.log("Engine is  :   "+this.engine) 
+   } 
+}
+
+this keyword
+
+//creating object
+
+var obj = new Car("Engine 1")
+
+obj.disp()
+
+
+///////
+Access Modifiers in Typescript
+TypeScript supports the common access modifiers that control class members access.
+Typescript access modifiers are :
+1. public : available on instances everywhere
+2. private : not available for access outside the class. 
+3. protected : available on child classes but not on instances directly.
+
+Ex:
+---
+
+class FooBase {
+
+public x: number;
+private y: number;
+protected z: number;
+}
+
+// EFFECT ON INSTANCES
+
+var foo = new FooBase();
+foo.x; // okay
+foo.y; // ERROR : private
+foo.z; // ERROR : protected
+
+// EFFECT ON CHILD CLASSES
+
+class FooChild extends FooBase {
+constructor() {
+super();
+this.x; // okay
+this.y; // ERROR: private
+this.z; // okay
+}
+}
+/////////////
+method over riding
+class PrinterClass { 
+   doPrint():void {
+      console.log("doPrint() from Parent called…") 
+   } 
+} 
+
+class StringPrinter extends PrinterClass { 
+   doPrint():void { 
+      super.doPrint() 
+      console.log("doPrint() is printing a string…")
+   } 
+} 
+
+var obj = new StringPrinter() 
+obj.doPrint()
+
+actual way of using interfaces
+
+
+interface ILoan { 
+   interest:number 
+} 
+
+class AgriLoan implements ILoan { 
+   interest:number 
+   rebate:number 
+   
+   constructor(interest:number,rebate:number) { 
+      this.interest = interest 
+      this.rebate = rebate 
+   } 
+} 
+
+var obj = new AgriLoan(10,1)
+
+
+
+
+special features
+////////////////
+
+template strings
+
+var todo = {
+id:123,
+completed:true
+}
+var display = `Todo ${todo.id}`;
+
+let and const
+
+for(var x=0; x<=5; x++){
+var counter =x;
+}
+console.log(counter);
+
+if I use let it will block to bloc elements
+
+for.......of loop
+
+
+var array = [
+    "1", 
+    "2", 
+    "3"
+];
+
+
+
+for(var index in array){
+var value = array[index];
+consloe.log(`${value}`);
+}
+
+for (var value of array) {
+    console.log(value);
+}
+ 
+other more advanced concepts are lambdas,spread operator,destructing
+
+destructing
+var array = [123,"pick",true];
+
+var[id,title,done] = array
+
+imn swapping alos we can implement
+
+
